@@ -1,0 +1,16 @@
+[project]
+name = "chat-with-your-data-using-chatgpt-3806110"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"openai",
+	"python-dotenv",
+	"langchain",
+	"langchain-openai",
+	"pypdf",
+	"faiss-cpu",
+	"langchainhub",
+	"langchain-community",
+]
