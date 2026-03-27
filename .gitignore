@@ -2,3 +2,52 @@
 node_modules
 .tmp
 npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg
+
+# Virtual environment and env files
+.env
+.env.*
+
+# Test, cache, and IDE
+.pytest_cache/
+.mypy_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# uv CLI / uv runtime files
+.uv/
+uv.lock
+uv.lock.json
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
