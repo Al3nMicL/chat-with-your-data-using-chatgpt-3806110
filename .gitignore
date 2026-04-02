@@ -57,3 +57,20 @@ ipython_config.py
 
 # Visual Studio Code
 .vscode
+
+# Antigravity & Agentic Context
+.agents/
+.antigravity/
+.context/
+*.context.md
+opencode-history.md
+session_summary.txt
+
+# Personal AI Rules
+.rules/local/
+custom-instructions.md
+
+# Large Language Model Artifacts
+*.embeddings
+*.vectorstore/
+.ai-cache/
