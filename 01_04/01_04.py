@@ -14,7 +14,7 @@ pages = []
 
 for loader in loaders:
     pages.extend(loader.load())
-
+# Define the text splitter parameters and split the documents into chunks
 from langchain_text_splitters import CharacterTextSplitter
 text_splitter = CharacterTextSplitter(
     separator="\n",
@@ -24,7 +24,7 @@ text_splitter = CharacterTextSplitter(
 )
 
 docs = text_splitter.split_documents(pages)
-
+# Output the total number of documents after splitting and display a few sample documents 
 print(f"Total documents after splitting: {len(docs)}\n")
 
 print("--- docs[3] ---")
