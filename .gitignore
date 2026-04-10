@@ -75,5 +75,5 @@ custom-instructions.md
 *.vectorstore/
 .ai-cache/
 
-# Faiss Index folders and files
-**/faiss_index/**
+# Faiss Index folders, files, and subfolders
+**/faiss2_index/**
