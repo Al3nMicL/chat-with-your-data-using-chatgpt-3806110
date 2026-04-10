@@ -58,13 +58,14 @@ ipython_config.py
 # Visual Studio Code
 .vscode
 
-# Antigravity & Agentic Context
+# Google Antigravity & Agentic Context
 .agents/
 .antigravity/
 .context/
 *.context.md
 opencode-history.md
 session_summary.txt
+gemini-session*.md
 
 # Personal AI Rules
 .rules/local/
