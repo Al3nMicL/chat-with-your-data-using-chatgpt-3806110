@@ -58,6 +58,9 @@ ipython_config.py
 # Visual Studio Code
 .vscode
 
+# OpenAI codex
+.codex
+
 # Google Antigravity & Agentic Context
 .agents/
 .antigravity/
