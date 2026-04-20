@@ -12,8 +12,9 @@ from langchain_openai import ChatOpenAI
 
 # initialize the LLM we'll use - OpenAI GPT 3.5 Turbo
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-3.5-turbo-0125")
-#prompt the model with no additional knowledge of the Voynich manuscript beyond pretraining 
+
 print("--- Calling LLM without RAG: 'What are the medicinal insights from the Voynich manuscript?' ---")
+# prompt the model with no additional knowledge of the Voynich manuscript beyond pretraining 
 response1 = llm.invoke("What are the medicinal insights from the Voynich manuscript?")  
 print(response1)
 
@@ -23,17 +24,19 @@ print(response2)
 
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
+
 # load vector database from disk
 db = FAISS.load_local("../faiss_index", 
                       OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY, model="text-embedding-3-small"), 
                       allow_dangerous_deserialization=True)
-# config retriever - use the similarity search capabilities of a vector stror to facilitate retrieval
+
+# config retriever - use the similarity search capabilities of a vector store to facilitate retrieval
 retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 6})
 
 from langchain_classic import hub
 
-prompt = hub.pull("rlm/rag-prompt")
 # implement a chain - put together multiple calls in a logical sequence
+prompt = hub.pull("rlm/rag-prompt")
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
@@ -47,6 +50,7 @@ rag_chain = (
     | llm
     | StrOutputParser() #convert the chat message to a string
 )
+
 # send LLM's response to the user
 print("\n--- Calling LLM with RAG: 'What are the medicinal insights from the Voynich manuscript?' ---")
 for chunk in rag_chain.stream("What are the medicinal insights from the Voynich manuscript?"):
