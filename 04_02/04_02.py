@@ -6,8 +6,8 @@ OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
 from langchain_openai import ChatOpenAI
 
-# initialize the LLM we'll use - OpenAI GPT 3.5 Turbo
-llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-3.5-turbo-0125")
+# initialize the LLM we'll use - OpenAI GPT 4.1 Nano
+llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-4.1-nano-2025-04-14")
 
 print("--- Calling LLM without RAG: 'What are the medicinal insights from the Voynich manuscript?' ---")
 # prompt the model with no additional knowledge of the Voynich manuscript beyond pretraining 
